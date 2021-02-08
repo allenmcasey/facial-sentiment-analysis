@@ -63,27 +63,27 @@ public class FacialSentimentAnalysis extends JFrame {
 		//Create and style image panel
 		JPanel imagePanel = new JPanel();
 		URL imageUrl = new URL("url-string-here/" + summary.getKey());
-	    JLabel label = new JLabel(new ImageIcon((ImageIO.read(imageUrl))));
-	    label.setPreferredSize(new Dimension(500, 380));
-	    Border border = BorderFactory.createBevelBorder(1, Color.black, Color.black);
+		JLabel label = new JLabel(new ImageIcon((ImageIO.read(imageUrl))));
+		label.setPreferredSize(new Dimension(500, 380));
+	    	Border border = BorderFactory.createBevelBorder(1, Color.black, Color.black);
 		label.setBorder(border);
-	    imagePanel.add(label);
+	    	imagePanel.add(label);
 	    
-	    //Create panel with emotion choices
-	    buildEmotionPanel();	
-	    
-	    //Add panels to JFrame
-	    add(question, BorderLayout.NORTH);
-	    add(imagePanel, BorderLayout.CENTER);
-	    add(emotionPanel, BorderLayout.SOUTH);
-	    
-	    //Create and style JFrame
-	    setTitle("Empathy");
+		//Create panel with emotion choices
+		buildEmotionPanel();	
+
+		//Add panels to JFrame
+		add(question, BorderLayout.NORTH);
+		add(imagePanel, BorderLayout.CENTER);
+		add(emotionPanel, BorderLayout.SOUTH);
+
+	   	//Create and style JFrame
+	   	setTitle("Empathy");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		
-	    pack();
-	    setVisible(true);
-	    Dimension windowDimension = Toolkit.getDefaultToolkit().getScreenSize();
-	    setLocation(windowDimension.width/2-this.getSize().width/2, windowDimension.height/2-this.getSize().height/2);
+	   	pack();
+	   	setVisible(true);
+	   	Dimension windowDimension = Toolkit.getDefaultToolkit().getScreenSize();
+	   	setLocation(windowDimension.width/2-this.getSize().width/2, windowDimension.height/2-this.getSize().height/2);
 	}	
 	
 	
@@ -96,37 +96,37 @@ public class FacialSentimentAnalysis extends JFrame {
 		JButton happy = new JButton("Happy");
 		happy.setActionCommand("HAPPY");
 		happy.addActionListener(new EmotionListener());
-	    emotionPanel.add(happy);
+	    	emotionPanel.add(happy);
 	    
-	    JButton sad = new JButton("Sad");
-	    sad.setActionCommand("SAD");
-	    sad.addActionListener(new EmotionListener());
-	    emotionPanel.add(sad);
+	   	JButton sad = new JButton("Sad");
+	   	sad.setActionCommand("SAD");
+	   	sad.addActionListener(new EmotionListener());
+	   	emotionPanel.add(sad);
 	    
-	    JButton calm = new JButton("Calm");
-	    calm.setActionCommand("CALM");
-	    calm.addActionListener(new EmotionListener());
-	    emotionPanel.add(calm);
+	   	JButton calm = new JButton("Calm");
+	   	calm.setActionCommand("CALM");
+	   	calm.addActionListener(new EmotionListener());
+	   	emotionPanel.add(calm);
 	    
-	    JButton disgusted = new JButton("Disgusted");
-	    disgusted.setActionCommand("DISGUSTED");
-	    disgusted.addActionListener(new EmotionListener());
-	    emotionPanel.add(disgusted);
+	   	JButton disgusted = new JButton("Disgusted");
+	   	disgusted.setActionCommand("DISGUSTED");
+	   	disgusted.addActionListener(new EmotionListener());
+	   	emotionPanel.add(disgusted);
 	    
-	    JButton scared = new JButton("Scared");
-	    scared.setActionCommand("SCARED");
-	    scared.addActionListener(new EmotionListener());
-	    emotionPanel.add(scared);
+	   	JButton scared = new JButton("Scared");
+	   	scared.setActionCommand("SCARED");
+	   	scared.addActionListener(new EmotionListener());
+	   	emotionPanel.add(scared);
 	    
-	    JButton confused = new JButton("Confused");
-	    confused.setActionCommand("CONFUSED");
-	    confused.addActionListener(new EmotionListener());
-	    emotionPanel.add(confused);
+	   	JButton confused = new JButton("Confused");
+	   	confused.setActionCommand("CONFUSED");
+	   	confused.addActionListener(new EmotionListener());
+	   	emotionPanel.add(confused);
 	    
-	    JButton angry = new JButton("Angry");
-	    angry.setActionCommand("ANGRY");
-	    angry.addActionListener(new EmotionListener());
-	    emotionPanel.add(angry);
+	   	JButton angry = new JButton("Angry");
+	   	angry.setActionCommand("ANGRY");
+	   	angry.addActionListener(new EmotionListener());
+	   	emotionPanel.add(angry);
 	}	
 	
 	
