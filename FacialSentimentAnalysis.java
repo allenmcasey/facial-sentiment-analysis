@@ -1,20 +1,18 @@
-package com.amazonaws.samples;
-
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.rekognition.AmazonRekognition;
 import com.amazonaws.services.rekognition.AmazonRekognitionClientBuilder;
 import com.amazonaws.services.rekognition.model.AmazonRekognitionException;
 import com.amazonaws.services.rekognition.model.Image;
 import com.amazonaws.services.rekognition.model.S3Object;
-import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.AmazonS3ClientBuilder;
-import com.amazonaws.services.s3.iterable.S3Objects;
-import com.amazonaws.services.s3.model.S3ObjectSummary;
-
 import com.amazonaws.services.rekognition.model.Attribute;
 import com.amazonaws.services.rekognition.model.DetectFacesRequest;
 import com.amazonaws.services.rekognition.model.DetectFacesResult;
 import com.amazonaws.services.rekognition.model.Emotion;
+
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3ClientBuilder;
+import com.amazonaws.services.s3.iterable.S3Objects;
+import com.amazonaws.services.s3.model.S3ObjectSummary;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -52,7 +50,6 @@ public class FacialSentimentAnalysis extends JFrame {
 	public static String s3Bucket = "url-string-here";
 
 	
-	
 	//Constructor for image/choice windows
 	public FacialSentimentAnalysis(S3ObjectSummary summary) throws IOException {
 		
@@ -85,7 +82,6 @@ public class FacialSentimentAnalysis extends JFrame {
 	   	Dimension windowDimension = Toolkit.getDefaultToolkit().getScreenSize();
 	   	setLocation(windowDimension.width/2-this.getSize().width/2, windowDimension.height/2-this.getSize().height/2);
 	}	
-	
 	
 	
 	//Assemble panel for emotion choice buttons
@@ -127,8 +123,7 @@ public class FacialSentimentAnalysis extends JFrame {
 	   	angry.setActionCommand("ANGRY");
 	   	angry.addActionListener(new EmotionListener());
 	   	emotionPanel.add(angry);
-	}	
-	
+	}		
 	
 	
 	//When an emotion is selected, this listener assigns the selection to emotionGuess and indicates that a selection was made 
@@ -137,8 +132,7 @@ public class FacialSentimentAnalysis extends JFrame {
 			emotionGuess = e.getActionCommand();
 			guessMade = true;
 		}
-	}
-	
+	}	
 	
 	
 	//Analyzes an image using the AWS Rekognition API
@@ -190,7 +184,6 @@ public class FacialSentimentAnalysis extends JFrame {
 			err.printStackTrace();
 		}
 	}	
-	
 	
 	
 	//Main method. Builds windows and calls the analyze function, then disposes of window once result is displayed
