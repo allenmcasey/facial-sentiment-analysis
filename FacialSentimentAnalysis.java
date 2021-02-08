@@ -49,7 +49,7 @@ public class FacialSentimentAnalysis extends JFrame {
 	//Create instances of Rekognition API and S3 for use in the application		
 	static AmazonRekognition rekognitionClient = AmazonRekognitionClientBuilder.standard().withRegion(Regions.US_EAST_1).build();
 	public static AmazonS3 s3Client = AmazonS3ClientBuilder.standard().withRegion(Regions.US_EAST_1).build();
-	public static String s3Bucket = "empathyprototype-deployments-mobilehub-595834428";
+	public static String s3Bucket = "url-string-here";
 
 	
 	
@@ -62,7 +62,7 @@ public class FacialSentimentAnalysis extends JFrame {
 		
 		//Create and style image panel
 		JPanel imagePanel = new JPanel();
-		URL imageUrl = new URL("https://s3.amazonaws.com/empathyprototype-deployments-mobilehub-595834428/" + summary.getKey());
+		URL imageUrl = new URL("url-string-here/" + summary.getKey());
 	    JLabel label = new JLabel(new ImageIcon((ImageIO.read(imageUrl))));
 	    label.setPreferredSize(new Dimension(500, 380));
 	    Border border = BorderFactory.createBevelBorder(1, Color.black, Color.black);
